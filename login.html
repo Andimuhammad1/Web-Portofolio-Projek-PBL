@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Portal</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      position: fixed;
+      top: 0;
+      background: #fff;
+    }
+
+    header h1 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111;
+      margin-left: 25px;
+      font-size: 14px;
+    }
+
+    .container {
+      margin-top: 100px;
+      width: 400px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    label {
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    input {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background: #111;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #333;
+    }
+
+    .links {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .links a {
+      color: #111;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 13px;
+      color: #555;
+      border-top: 1px solid #ccc;
+      padding: 15px;
+      text-align: center;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Login Portal</h1>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Daftar</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Selamat Datang Kembali!</h2>
+    <p>Silakan login untuk melanjutkan</p>
+
+    <form id="loginForm">
+      <label for="email">Email / NIM</label>
+      <input type="text" id="email" placeholder="Masukkan email atau NIM" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Masukkan password" required>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="links">
+      <a href="#">Lupa Password?</a> | 
+      <a href="register.html">Buat Akun Baru</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Kebijakan Privasi | Syarat Layanan | Kontak Kami</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('loginForm');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+
+      const foundUser = users.find(u => (u.email === email || u.nim === email) && u.password === password);
+
+      if(foundUser){
+        alert("Login berhasil! Selamat datang, " + foundUser.email);
+        window.location.href = "index.html";
+      } else {
+        alert("Email/NIM atau password salah!");
+      }
+    });
+  </script>
+</body>
+</html>

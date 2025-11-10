@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Pengguna - Web Portfolio</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+    }
+
+    .profile-info {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .profile-info img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .profile-info div {
+      flex: 1;
+    }
+
+    .project-list {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #f1f1f1;
+      border-radius: 10px;
+      padding: 20px;
+      flex: 1 1 calc(33% - 20px);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: #222;
+      color: #bbb;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #bbb;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>Profil Pengguna</h2>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">Profil</a>
+      <a href="login.html">Logout</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="profile-info">
+      <img src="https://via.placeholder.com/120" alt="Foto Profil">
+      <div>
+        <h3>Nama Pengguna</h3>
+        <p><strong>NIM:</strong> 123456789</p>
+        <p><strong>Email:</strong> user@example.com</p>
+      </div>
+    </div>
+
+    <h2>Proyek Terbaru</h2>
+    <div class="project-list">
+      <div class="card">
+        <h4>Proyek A</h4>
+        <p>Deskripsi singkat proyek.</p>
+      </div>
+      <div class="card">
+        <h4>Proyek B</h4>
+        <p>Deskripsi singkat proyek.</p>
+      </div>
+      <div class="card">
+        <h4>Proyek C</h4>
+        <p>Deskripsi singkat proyek.</p>
+      </div>
+    </div>
+
+    <h2 style="margin-top:40px;">Riwayat Proyek</h2>
+    <ul>
+      <li>Desain Sistem Absensi (2024)</li>
+      <li>Dashboard Analisis Keuangan (2023)</li>
+      <li>Aplikasi Booking Spa Hijau (2022)</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Web Portfolio | <a href="#">Kebijakan Privasi</a> | <a href="#">Bantuan</a></p>
+  </footer>
+
+</body>
+</html>
