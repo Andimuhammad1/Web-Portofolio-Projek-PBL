@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost';
-$dbname = 'pbl_if1d/public';
+$dbname = 'pbl_if1d';
 $username = 'root';
 $password = '';
 
